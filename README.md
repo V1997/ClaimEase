@@ -1,6 +1,97 @@
-### Task: Automate the Prior Authorization (PA) Form Filling Workflow
+# ClaimEase - Automated Prior Authorization Form Filling System
+
+**Intelligent microservices-based system for automating healthcare PA form processing**
+
+## 🎯 Project Overview
+
+ClaimEase automates the Prior Authorization (PA) form filling workflow for healthcare providers using a sophisticated microservices architecture with AI/ML capabilities.
+
+### **System Capabilities**
+- ✅ **Complete Pipeline**: PDF upload → OCR → NLP → Form Filling → Output
+- ✅ **Microservices Architecture**: 6 services with Redis data flow
+- ✅ **AI-Powered**: EasyOCR + spaCy for intelligent text extraction and entity recognition
+- ✅ **Real-time Processing**: Background job processing with progress tracking
+- ✅ **Monitoring**: Prometheus + Grafana observability stack
+
+### **Current Status** (June 15, 2025)
+- 🟢 **Pipeline**: Fully operational through NLP entity extraction
+- 🟡 **Form Filling**: Mapping works (27+ fields), visibility issue being resolved
+- 🔧 **Enhancement**: Migrating from pdftk to PyMuPDF for better form compatibility
+
+## 📚 Documentation
+
+### **📖 Quick Start**
+- [AI Context](docs/ai-context.md) - Current project status and context
+- [Architecture Overview](docs/architecture/overview.md) - System architecture
+- [Development Progress](docs/development/progress-notes.md) - Progress tracking
+
+### **🤖 AI Conversation History**
+- [Conversation Archive](docs/ai-conversations/) - Technical discussions preserved
+- [Latest Session](docs/ai-conversations/2025-06-15-architecture-analysis.md) - Architecture analysis
+
+### **🏗️ Technical Documentation**
+- [Complete Docs](docs/README.md) - Full documentation index
 
 ---
+
+## 🚀 Quick Start
+
+### **Prerequisites**
+- Docker & Docker Compose
+- Git
+
+### **Installation & Setup**
+```bash
+# Clone repository
+git clone [repository-url]
+cd ClaimEase
+
+# Start all services
+docker-compose up -d
+
+# Check service health
+docker-compose ps
+```
+
+### **Processing a PA Form**
+```bash
+# Start processing for a patient
+curl -X POST http://localhost:8000/api/v1/patients/Amy/process
+
+# Check job status
+curl -X GET http://localhost:8000/api/v1/jobs/{job_id}/status
+
+# Monitor logs
+docker-compose logs -f
+```
+
+---
+
+## 🏗️ Architecture
+
+### **Microservices Overview**
+```
+Client → API Gateway → Worker → [Document, OCR, NLP, Form] → Output
+```
+
+### **Tech Stack**
+- **Backend**: FastAPI + Python 3.x + Uvicorn
+- **Database**: PostgreSQL 15 + Redis 7
+- **AI/ML**: EasyOCR + spaCy + PyMuPDF
+- **Queue**: Celery + Redis broker
+- **Monitoring**: Prometheus + Grafana
+- **Deployment**: Docker Compose
+
+### **Data Flow**
+1. **Upload** → Document analysis and file discovery
+2. **OCR** → Text extraction with EasyOCR (300 DPI)
+3. **NLP** → Entity extraction with spaCy
+4. **Mapping** → 27+ form fields mapped correctly
+5. **Filling** → PDF form completion (PyMuPDF migration in progress)
+
+---
+
+## 🎯 Original Assignment
 
 ### **Purpose of this assignment**
 
