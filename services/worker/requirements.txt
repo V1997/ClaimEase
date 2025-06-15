@@ -1,0 +1,5 @@
+celery==5.3.4
+redis==5.0.1
+httpx==0.25.2
+sqlalchemy==2.0.23
+asyncpg==0.29.0
