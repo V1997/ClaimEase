@@ -4,11 +4,10 @@ import json
 import os
 import logging
 import re
+import subprocess
 import tempfile
 from datetime import datetime
 from typing import Dict, List, Any
-from pypdf import PdfReader, PdfWriter
-from pypdf.generic import BooleanObject, NameObject, IndirectObject
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
