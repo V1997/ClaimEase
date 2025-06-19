@@ -7,6 +7,7 @@
 ```
 docs/
 ├── README.md                    # This file - documentation overview
+├── technical-architecture.md   # Comprehensive technical architecture
 ├── ai-context.md               # Current project status for AI sessions
 ├── ai-conversations/           # AI conversation history
 │   ├── conversation-template.md    # Template for new sessions
@@ -15,6 +16,17 @@ docs/
 ├── development/               # Development notes and decisions
 └── diagrams/                 # Architecture diagrams and visuals
 ```
+
+## 📚 Documentation Index
+
+### **Core Documentation**
+- **[Technical Architecture](technical-architecture.md)** - Comprehensive system architecture, processing flow, and implementation details
+- **[AI Context](ai-context.md)** - Current project status and context for AI development sessions
+- **[Architecture Overview](architecture/overview.md)** - High-level system architecture and design principles
+
+### **Development Documentation**
+- **[Development Progress](development/progress-notes.md)** - Development milestones and progress tracking
+- **[AI Conversations](ai-conversations/)** - Historical AI development sessions for context preservation
 
 ## 🤖 AI Conversation Workflow
 
